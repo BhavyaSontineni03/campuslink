@@ -1,0 +1,23 @@
+{
+  "name": "campuslink",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CampusLink - campus event engagement platform",
+  "scripts": {
+    "dev:db": "docker compose up -d postgres redis",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "docker compose up -d postgres redis && npm --prefix backend run dev",
+    "seed": "npm --prefix backend run seed",
+    "simulate": "npm --prefix backend run simulate",
+    "test": "npm --prefix backend test",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "start": "docker compose up -d",
+    "stop": "docker compose down",
+    "logs": "docker compose logs -f"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT"
+}
